@@ -15,4 +15,4 @@ BUNUNLA UĞRAŞMAK İSTEMEZSENİZ, PROJEMİ ÜCRETSİZ HOST OLAN SOMEE.COM'DA YA
 museumproject.somee.com ADRESİNDEN DİREK ERİŞİM SAĞLAYABİLİRSİNİZ.
 
 ADMİN PANELİ İÇİN GİRİŞ BİLGİLERİ:
-Kullanıcı adı:trkaydn  Şifre:12345 
+Kullanıcı adı: trkaydn  Şifre: 12345 
