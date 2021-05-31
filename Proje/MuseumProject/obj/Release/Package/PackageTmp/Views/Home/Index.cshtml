@@ -1,0 +1,146 @@
+﻿@model MuseumProject.Models.IndexViewModel
+@{
+    var lastAdded = Model.Collection.Take(6).ToList();
+}
+<div class="banner header-text">
+    <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+            <div class="text-content">
+                <h4 style="background-color:white;opacity:0.6;color:black;">E-Müze Galeri</h4>
+                <h2 style="background-color:black;opacity:0.6;">Sanat ve koleksiyon yapıtları bir tık uzağınızda!</h2>
+            </div>
+        </div>
+        <div class="banner-item-02">
+            <div class="text-content">
+                <h4 style="background-color:white;opacity:0.6;color:black;">E-Müze Galeri</h4>
+                <h2 style="background-color:black;opacity:0.6;">Pandemi kısıtlamalarından dolayı sergileri evinize getirdik.</h2>
+            </div>
+        </div>
+        <div class="banner-item-03">
+            <div class="text-content">
+                <h4 style="background-color:white;opacity:0.6;color:black;">E-Müze Galeri</h4>
+                <h2 style="background-color:black;opacity:0.6;">Siz sağlıklı kalın, baş yapıtlar size gelsin.</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Son Eklenenler</h2>
+                    <a href="@Url.Action("Collection","Home")">Tümünü Gör<i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            @foreach (var item in lastAdded)
+            {
+                <div class="col-md-4" style="height:600px;margin-bottom:20px;" onmouseenter="Focus(@item.Id)" onmouseleave="Unfocus(@item.Id)">
+                    <div class="product-item" id="@item.Id">
+                        <a href="#galleryModal" data-large-src="@item.Photo" data-toggle="modal">
+                            <img src="@item.Photo" class="img-fluid img-thumbnail">
+                        </a>
+
+                        <div class="down-content">
+                            <a href="#galleryModal" data-large-src="@item.Photo" data-toggle="modal">
+
+                                <h4>@item.Name</h4></a>
+                                <p>@item.Description</p>
+                                <ul class="stars">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <br /><br /><br /><br />
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="text-center" id="modalHeader"></h3>
+                            <button type="button" class="close float-right" aria-label="Close" data-dismiss="modal">
+                                <span aria-hidden="true">&#xD7;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body p-0 text-center bg-alt">
+                            <img src="#" id="galleryImage" class="loaded-image mx-auto img-fluid"><br /><br />
+                            <h5 id="modalDescription"></h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Kapat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="best-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Hakkımızda</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="left-content">
+                    <br />
+                    <h4>E-Müze Nedir?</h4>
+                    <p>@Model.Admin.About.Substring(0, 485)</p>
+                    <ul class="featured-list">
+                        <li><h4>Sanat ve koleksiyon yapıtları bir tık uzağınızda!</h4></li>
+                        <li><h4>Pandemi kısıtlamalarından dolayı sergileri evinize getirdik.</h4></li>
+                        <li><h4>Siz sağlıklı kalın, baş yapıtlar size gelsin.</h4></li>
+                    </ul>
+                    <a href="@Url.Action("About","Home")" class="filled-button">Devamını Oku</a><br /><br /><br />
+
+                    <br />
+                    <ul class="social-icons" style="float:right;">
+                        <li><a href="https://www.facebook.com/tarik1846"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/_trkaydn_"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://twitter.com/_trkaydn_"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://github.com/trkaydn"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <div class="col-md-6">
+                <div class="right-image">
+                    <img src="~/Content/assets/images/indexPhoto.png" alt="E-Müze Galeri">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>Bize sormak istediğiniz bir şey mi var?</h4>
+                            <p>Formu doldurup gönderin. En kısa zamanda E-Posta yoluyla dönüş yapılacaktır.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="javascript:void(0);" class="filled-button contactButton">Bize Ulaşın</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

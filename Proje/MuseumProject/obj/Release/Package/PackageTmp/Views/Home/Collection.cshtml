@@ -1,0 +1,81 @@
+﻿@using MuseumProject.Models.Entities
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Collection>
+
+<div class="page-heading about-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4 style="background-color:white;opacity:0.6;color:black;">Koleksiyonlar</h4>
+                    <h2 style="background-color:black;opacity:0.8;">@ViewBag.Heading</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="filters-content">
+                    <div class="row grid" style="position: relative; height: 767.782px;">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-4 col-md-4 all des" style="position: absolute; left: 0%; top: 0px; height:600px;margin-bottom:20px;" onmouseenter="Focus(@item.Id)" onmouseleave="Unfocus(@item.Id)">
+                                <div class="product-item" id="@item.Id">
+                                    <a href="#galleryModal" data-large-src="@item.Photo" data-toggle="modal">
+                                        <img src="@item.Photo" alt="@item.Name">
+                                    </a>
+
+                                    <div class="down-content">
+                                        <a href="#galleryModal" data-large-src="@item.Photo" data-toggle="modal">
+                                            <h4>@item.Name</h4>
+                                        </a>
+                                        <p>@item.Description</p>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                        <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <br /><br /><br /><br />
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="text-center" id="modalHeader"></h3>
+                                        <button type="button" class="close float-right" aria-label="Close" data-dismiss="modal">
+                                            <span aria-hidden="true">&#xD7;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body p-0 text-center bg-alt">
+                                        <img src="#" id="galleryImage" class="loaded-image mx-auto img-fluid"><br /><br />
+                                        <h5 id="modalDescription"></h5>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div style="width:30%;margin:auto">
+                @Html.PagedListPager(Model, page => Url.Action("Collection", new { page }))
+            </div>
+        </div>
+    </div>
+</div>
+

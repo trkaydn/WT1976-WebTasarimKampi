@@ -1,0 +1,46 @@
+﻿@model IndexViewModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h4 style="text-align:center">Tüm Mesajlar</h4>
+<br />
+
+<div class="container">
+
+    @if (TempData["AllMessage"] != null)
+    {
+        <div class="alert alert-secondary"><button class="close" data-dismiss="alert" style="height:auto;color:darkred">×</button><h4 style="color:darkblue">@TempData["AllMessage"]</h4></div>
+    }
+    <div class="table-responsive">
+        <table class="table table-hover table-active">
+            <thead class="bg-light">
+                <tr>
+                    <th>Gönderen</th>
+                    <th>E-Posta</th>
+                    <th>Tarih</th>
+                    <th>Mesaj</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Message)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Mail</td>                     
+                        <td>@item.MessageDate.ToString("dd.MM.yyyy")</td>
+                        <td>@item.MessageText</td>
+                        <td><a class="btn btn-danger" href="/Admin/DeleteMessage/@item.Id">X</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

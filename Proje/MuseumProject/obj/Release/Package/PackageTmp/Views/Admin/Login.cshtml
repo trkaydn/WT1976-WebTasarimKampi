@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>E-Müze - Giriş Yap</title>
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/fontawesome-all.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/templatemo-sixteen.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/owl.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/svg" href="~/Content/assets/images/favicon.png" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            background-color: #f33f3f;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="width:auto">
+        <div class="splash-container">
+            <div class="card ">
+                <div class="card-header text-left"><h1 class="display-4" style="float:left">E-Müze <br />Galeri</h1><br /><img src="~/Content/assets/images/favicon.png" alt="logo" style="width:90px;height:90px;float:right" /></div>
+                <br /><span class="splash-description" style="text-align:center">Yönetici Girişi</span>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" name="userName" type="text" placeholder="Kullanıcı Adı" autocomplete="off" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" name="Password" type="password" placeholder="Şifre" maxlength="50">
+                        </div>
+                        <label class="custom-control custom-checkbox">
+                            <span class="splash-description" style="color:red; text-align:center">@ViewBag.Message</span>
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Giriş Yap</button>
+                    </form>
+                    <br />
+                    <div class="form-group">
+
+                        <a href="@Url.Action("Index","Home")" class="btn btn-secondary btn-block">E-Müze'ye Dön</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

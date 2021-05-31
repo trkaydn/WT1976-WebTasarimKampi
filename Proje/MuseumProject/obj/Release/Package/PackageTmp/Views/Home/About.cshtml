@@ -1,0 +1,49 @@
+﻿@model MuseumProject.Models.Entities.Admin 
+<div class="page-heading about-heading header-text">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4 style="background-color:white;opacity:0.6;color:black;">E-Müze Galeri</h4>
+                    <h2 style="background-color:black;opacity:0.8;">Hakkımızda</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="best-features about-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Hakkımızda</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-image">
+                    <img src="@Model.Photo" alt="Tarık Aydın">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="left-content">
+                    <h4>Biz Kimiz?</h4>
+                    <p>@Model.About.Substring(0,485)</p>
+                    <p>@Model.About.Substring(485)</p>
+       
+                    <ul class="social-icons" style="float:right;">
+                        <li><a href="https://www.facebook.com/tarik1846"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/_trkaydn_"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://twitter.com/_trkaydn_"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://github.com/trkaydn"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+        <img src="~/Content/assets/images/map.jpg" alt="Harita"/>
+        <p style="text-align:right;">Mayıs,2021 - Ankara</p>
+
+    </div>
+</div>
+

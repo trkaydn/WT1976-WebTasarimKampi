@@ -1,0 +1,43 @@
+﻿@model AddCollectionViewModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <h4 style="text-align:center">Yeni İçerik Ekle</h4>
+    <br />
+    @using (Html.BeginForm("AddCollection", "Admin", FormMethod.Post))
+    {
+        <h6 class="form-control-plaintext">Koleksiyon Adı:</h6>
+        @Html.TextBoxFor(x => x.Collection.Name, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Collection.Name, "", new { @class = "text-danger" })
+        <br />
+
+        <h6 class="form-control-plaintext">Kategori Seçin:</h6>
+        @Html.DropDownListFor(x => x.Collection.CategoryId, Model.SelectedCategory, "Kategori Seçin", new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Collection.CategoryId, "", new { @class = "text-danger" })
+        <br />
+
+        <h6 class="form-control-plaintext">Fotoğraf Url:</h6>
+        @Html.TextBoxFor(x => x.Collection.Photo, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Collection.Photo, "", new { @class = "text-danger" })
+        <br />
+
+        <h6 class="form-control-plaintext">Açıklama:</h6>
+        @Html.TextAreaFor(x => x.Collection.Description,new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Collection.Description, "", new { @class = "text-danger" })
+        <br />
+
+
+        <input type="submit" class="btn-success btn-block" style="cursor:pointer" />
+        <input type="button" class="btn-danger btn-block" style="cursor:pointer" onclick="window.location='/Admin/Index/'" value="İptal"/>
+    }
+
+</div>
+
+
