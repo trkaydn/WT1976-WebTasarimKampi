@@ -11,8 +11,4 @@ Bu proje, Gazi DSC topluluğunun WT1976 kodlu Web Tasarım Kampı için bitirme 
 Asp.Net Mvc ile entity framework, bootstrap ve jQuery kullanarak geliştirdiğim bu projeyi kendi bilgisayarınızda denemek için,
 MuseumDb.bak isimli veritabanı dosyasını restore etmeniz ve connectionString'i değiştirmeniz gerekmektedir.
 
-BUNUNLA UĞRAŞMAK İSTEMEZSENİZ, PROJEMİ ÜCRETSİZ HOST OLAN SOMEE.COM'DA YAYINLADIM. 
-museumproject.somee.com ADRESİNDEN DİREK ERİŞİM SAĞLAYABİLİRSİNİZ.
-
-ADMİN PANELİ İÇİN GİRİŞ BİLGİLERİ:
-Kullanıcı adı: trkaydn  Şifre: 12345 
+ 
