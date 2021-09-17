@@ -10,7 +10,6 @@ Bu proje, Gazi DSC topluluğunun WT1976 kodlu Web Tasarım Kampı için bitirme 
 
 Asp.Net Mvc ile Entity Framework, Bootstrap ve jQuery kullanarak geliştirdiğim bu projeyi kendi bilgisayarınızda denemek için
 MuseumDb.bak isimli veritabanı dosyasını restore etmeniz ve connectionString'i değiştirmeniz gerekmektedir.
-
 ![sertifika](./katilim_sertifikasi.png)
 ![sertifika](./profesyonel_sertifika.png)
  
